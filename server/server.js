@@ -4,14 +4,16 @@ const app = express();
 // const port = process.env.Port;
 const apiRouter = require('./apiRouter.js');
 const PORT = 3000;
- 
+
+// app.set('view engine', 'ejs');
 
 //parses request body to json format
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
 app.use(express.static(path.resolve(__dirname, '../client')));
+
 
 //route-handler
 app.use('/api', apiRouter);
@@ -20,10 +22,10 @@ app.use('/api', apiRouter);
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for'));
 
 //global error handler
-app.use((err, req, res, next) =>{
+app.use((err, req, res, next) => {
   const defaultErr = {
-    log: 'Express error handler caught unknown middleware error', 
-    status: 500, 
+    log: 'Express error handler caught unknown middleware error',
+    status: 500,
     message: { err: 'An error occurred blahblahblah this is the global error handler' },
   };
   const errorObj = Object.assign({}, defaultErr, err);

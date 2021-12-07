@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MapChart from './App.js'
+import Map from './Map.js';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 ReactDOM.render(
-    <MapChart />,
+  // <Router>
+    <Map />,
+  // </Router>,
   document.getElementById('root')
 );
