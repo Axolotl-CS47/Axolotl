@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MapChart from './App.js'
+import App from './App.js'
 
 ReactDOM.render(
-    <MapChart />,
+    <App />,
   document.getElementById('root')
 );
