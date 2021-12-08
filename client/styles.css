@@ -16,3 +16,30 @@ html {
     font-family: sans-serif;
     text-align: center;
   }
+
+  /* #tt-element {
+    width: 20px;
+    height: 20px;
+    background: red;
+  } */
+
+#tt-element a {
+    display: none;
+    padding-left: 30px;
+  }
+
+#tt-element:hover a {
+    display: block;
+  }
+
+.dashDropdown {
+  width: 300px;
+}
+
+table {
+  border: 2px solid black;
+  width: 1200px;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

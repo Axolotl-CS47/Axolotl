@@ -1,25 +1,26 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import ReactDOM from "react-dom"
 import Dashboard from './Components/Dashboard.jsx'
 import MapChart from './Components/MapChart.jsx';
 import ReactTooltip from "react-tooltip";
+import style from "./styles.css";
 // url to a valid topojson file
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
- 
+
 const App = () => {
-  const [content, setContent] = useState("Venezuela");
+  const [content, setContent] = useState("");
 
   return (
     <div>
       <MapChart setTooltipContent={setContent} />
       <ReactTooltip>{content}</ReactTooltip>
       <Dashboard />
-      
-   </div>
+
+    </div>
   )
 }
- 
+
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<App />, document.getElementById("root"))
 })
