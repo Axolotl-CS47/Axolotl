@@ -3,43 +3,37 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import countryCityObj from "../../seeds/countryCapital.js";
 import store from '../store';
-const example = {
-  "providerCoverage":"ALL",
-  "itineraryType":"ONE_WAY",
-  "cheapestFlightNonStop":false,
-  "pointOfSale":{
-  "requestSourceCountry":"US",
-  "country":"US",
-  "currency":"USD"
-  },
-  "airport":[{
-  "code":"LAX",
-  "name":"Los Angeles Intl Airport",
-  "city":"Los Angeles",
-  "state":"CA",
-  "country":"United States",
-  "latitude":33.943108403,
-  "longitude":-118.410609209,
-  "isoCountryCode":"US",
-  "cityId":"1064400022",
-  "cityGisId":"3000001947",
-  "gmtTimeZoneOffset":"-08:00"
-  }]
-}
-
-const allCountries = () => countryCityObj.map(country => {
-  return <option>{country.country}</option>
-})
-
-const allCities = () => countryCityObj.map(country => {
-  return <option>{country.city}</option>
-})
+import { findCityByCountry } from "../utility.js";
 
 
 const Dashboard = () => {
-  // const [rows, setRowData] = useState('');
+  const [country, setCountryFrom] = useState('');
+  const [city, setCityFrom] = useState('');
+  const [countryTo, setCountryTo] = useState('');
+  const [cityTo, setCityTo] = useState('');
+  const [flightInformation, setFlightInfo] = useState('');
+
+
+  const flights = [];
   
-  const flightData = [];
+  
+  const allCountries = () => countryCityObj.map(country => {
+    return <option>{country.country}</option>
+  })
+  
+  useEffect(() => {
+    const currentCity = findCityByCountry(countryCityObj, country)
+    setCityFrom(currentCity)
+  }, [country])
+
+  useEffect(() => {
+    const currentCity = findCityByCountry(countryCityObj, countryTo)
+    setCityTo(currentCity)
+  }, [countryTo])
+
+  const cities = findCityByCountry(countryCityObj, country)
+  console.log(country, city, countryTo, cityTo)
+  // console.log(cities)
 
   return (
     <>
@@ -55,8 +49,8 @@ const Dashboard = () => {
         <input className='dashDropdown' placeholder='TO'></input>
         <button>Search</button> */}
         <form>
-          <p>FROM</p>
-          <select className='dashDropdown' >
+          <h4>From</h4>
+          <select className='dashDropdown' onChange={(e) => setCountryFrom(e.target.value)}>
             <option>Country</option>
             {allCountries()}
             {/* <option>{allCountries()}</option>
@@ -64,12 +58,13 @@ const Dashboard = () => {
           </select>
           <select className='dashDropdown'>
             <option>City</option>
-            {allCities()}
+            <option>{city}</option>
+
             {/* <option>Select One</option>
             <option>CDG</option> */}
           </select>
-          <p>TO</p>
-          <select className='dashDropdown'>
+          <h4>Destination</h4>
+          <select className='dashDropdown' onChange={(e) => setCountryTo(e.target.value)}>
             <option>Country</option>
             {allCountries()}
             {/* <option>{allCountries()}</option>
@@ -77,7 +72,7 @@ const Dashboard = () => {
           </select>
           <select className='dashDropdown'>
             <option>City</option>
-            {allCities()}
+            <option>{cityTo}</option>
             {/* <option>Select One</option>
             <option>CDG</option> */}
           </select>
