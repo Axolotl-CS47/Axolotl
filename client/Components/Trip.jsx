@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import countryCityObj from './countryCapital.js'
+import countryCityObj from '../../seeds/countryCapital.js'
 
 const Trip = (props) => {
 const [city, setCity] = useState('');
@@ -20,7 +20,11 @@ useEffect(() => {
 
   return (
     <>
-        { city } 
+      <div id="tt-element"></div>
+          { city } 
+          <br></br>
+          <a href={`https://www.wikipedia.com/?${city}`}>{city}</a>
+      <div />
     </>
   );
 };
