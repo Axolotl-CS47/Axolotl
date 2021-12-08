@@ -16,3 +16,18 @@ html {
     font-family: sans-serif;
     text-align: center;
   }
+
+  #tt-element {
+    width: 20px;
+    height: 20px;
+    background: red;
+}
+
+#tt-element a {
+    display: none;
+    padding-left: 30px;
+}
+
+#tt-element:hover a {
+    display: block;
+}
