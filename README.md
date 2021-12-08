@@ -20,6 +20,8 @@ Axolotl Geo Tracking App
 APIs (RapidAPI)
 * Flight Data (data tested)
 * topo-geo.json maps -110m
+* Simple React Maps with Tooltips https://www.react-simple-maps.io/examples/map-chart-with-tooltip/
+
 
 Dashboard
 * Filter for travel destinations
