@@ -17,11 +17,11 @@ html {
     text-align: center;
   }
 
-  #tt-element {
+  /* #tt-element {
     width: 20px;
     height: 20px;
     background: red;
-}
+  } */
 
 #tt-element a {
     display: none;

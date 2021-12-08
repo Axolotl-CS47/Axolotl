@@ -1,30 +1,27 @@
-import React, { memo } from "react";
+import React from "react";
 import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
-  Geography
+  Geography,
+  // Graticule
 } from "react-simple-maps";
 
-import Trip from './Trip.jsx'
+import Trip from './Trip.jsx';
+import store from '../store';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const rounded = num => {
-  if (num > 1000000000) {
-    return Math.round(num / 100000000) / 10 + "Bn";
-  } else if (num > 1000000) {
-    return Math.round(num / 100000) / 10 + "M";
-  } else {
-    return Math.round(num / 100) / 10 + "K";
-  }
-};
 
 const MapChart = ({ setTooltipContent }) => {
+  let currentState = store.getState();
+
   return (
     <>
+    <div style={{height: "800px", width: "800px"}}>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
+      {/* <Graticule stroke="#F53" />  */}
         <ZoomableGroup>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
@@ -34,7 +31,7 @@ const MapChart = ({ setTooltipContent }) => {
                   geography={geo}
                   onMouseEnter={() => {
                     const { NAME} = geo.properties;
-                    setTooltipContent(<Trip geo = {geo} NAME={NAME}/>);
+                    setTooltipContent(<Trip currentCity = {currentState.currentCity} geo = {geo} NAME={NAME}/>);
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");
@@ -59,6 +56,7 @@ const MapChart = ({ setTooltipContent }) => {
           </Geographies>
         </ZoomableGroup>
       </ComposableMap>
+      </div>
     </>
   );
 };
