@@ -33,8 +33,8 @@ const MapChart = ({ setTooltipContent }) => {
                   key={geo.rsmKey}
                   geography={geo}
                   onMouseEnter={() => {
-                    const { NAME, POP_EST } = geo.properties;
-                    setTooltipContent(<Trip NAME={NAME}/>);
+                    const { NAME} = geo.properties;
+                    setTooltipContent(<Trip geo = {geo} NAME={NAME}/>);
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");
