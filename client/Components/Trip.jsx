@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import countryCityObj from '../../seeds/countryCapital.js'
 
 const Trip = (props) => {
