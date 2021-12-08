@@ -25,7 +25,7 @@ const rounded = num => {
 
 const MapChart = ({ setTooltipContent }) => {
   let currentState = store.getState();
-console.log("currentState", currentState);
+
   return (
     <>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
