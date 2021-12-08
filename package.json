@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open --hot\" \"nodemon server/server.js\""
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open --hot\""
   },
   "repository": {
     "type": "git",
@@ -20,27 +20,53 @@
     "url": "https://github.com/Axolotl-CS47/Axolotl/issues"
   },
   "homepage": "https://github.com/Axolotl-CS47/Axolotl#readme",
-  "dependencies": {
-    "chart.js": "^3.6.1",
-    "chartjs-chart-geo": "^3.6.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "@reduxjs/toolkit": "^1.6.2",
+    "@svgr/webpack": "^6.1.1",
     "babel-loader": "^8.2.3",
     "concurrently": "^6.4.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb": "^19.0.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "express": "^4.17.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
     "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "postgres": "^1.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router": "^6.0.2",
+    "react-router-dom": "^6.0.2",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "^4.0.3",
+    "react-simple-maps": "^2.3.0",
+    "react-tooltip": "^4.2.21",
+    "redux": "^4.1.2",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",
-    "styles-loader": "^3.0.0",
-    "webpack": "^5.64.4",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.0.0-rc.6",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
+    "webpack-dev-server": "^4.6.0",
+    "zxcvbn": "^4.4.2"
+  },
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "bootstrap": "^5.1.3",
+    "latest-version": "^6.0.0",
+    "prop-types": "^15.7.2",
+    "react-router": "^6.0.0-beta.8",
+    "save-dev": "^0.0.1-security"
   }
 }
