@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -7,13 +7,16 @@ import {
   // Graticule
 } from "react-simple-maps";
 
-import Trip from './Trip.jsx'
+import Trip from './Trip.jsx';
+import store from '../store';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
 
 const MapChart = ({ setTooltipContent }) => {
+  let currentState = store.getState();
+
   return (
     <>
     <div style={{height: "800px", width: "800px"}}>
@@ -28,7 +31,7 @@ const MapChart = ({ setTooltipContent }) => {
                   geography={geo}
                   onMouseEnter={() => {
                     const { NAME} = geo.properties;
-                    setTooltipContent(<Trip geo = {geo} NAME={NAME}/>);
+                    setTooltipContent(<Trip currentCity = {currentState.currentCity} geo = {geo} NAME={NAME}/>);
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");

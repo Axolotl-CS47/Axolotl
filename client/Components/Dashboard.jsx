@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import countryCityObj from "../../seeds/countryCapital.js";
-
+import store from '../store';
 const example = {
   "providerCoverage":"ALL",
   "itineraryType":"ONE_WAY",
@@ -45,6 +45,11 @@ const Dashboard = () => {
     <>
         <div>
         <h3>Dashboard</h3>
+        <button
+        onClick={() =>
+          store.dispatch({ type: "SET_CURRENT_CITY", payload: "Toronto" })
+        }
+      >Click me !!</button>
         <hr></hr>
         {/* <input className='dashDropdown' placeholder='FROM'></input>
         <input className='dashDropdown' placeholder='TO'></input>

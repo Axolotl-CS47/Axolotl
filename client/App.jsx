@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import ReactDOM from "react-dom"
-import Dashboard from './Components/Dashboard.jsx'
+import Dashboard from '../client/Components/Dashboard.jsx';
 import MapChart from './Components/MapChart.jsx';
 import ReactTooltip from "react-tooltip";
 import style from "./styles.css";

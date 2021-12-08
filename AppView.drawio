@@ -19,8 +19,8 @@
                 <mxCell id="13" value="" style="edgeStyle=none;shape=flexArrow;html=1;" parent="1" source="3" target="12" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Dashboard&lt;br&gt;&lt;font style=&quot;font-size: 8px&quot;&gt;(Renders a scrollable table that displays two dropdowns that list all capital cities. First drop down is labeled From city. Second is To City. The table would render initially all flights from the city selected in the first&amp;nbsp; dropdown. Two Links in each row that render the flight details or Location details based on the button clicked&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="190" y="-70" width="180" height="170" as="geometry"/>
+                <mxCell id="3" value="Dashboard&lt;br&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;(Renders a scrollable table that displays two dropdowns that list all capital cities. First drop down is labeled From city. Second is To City. The table would render initially all flights from the city selected in the first&amp;nbsp; dropdown. Two Links in each row that render the flight details or Location details based on the button clicked&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="-130" width="230" height="230" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="Tooltip" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="220" y="300" width="120" height="60" as="geometry"/>
