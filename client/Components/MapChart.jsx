@@ -6,6 +6,8 @@ import {
   Geography
 } from "react-simple-maps";
 
+import Trip from './Trip.jsx'
+
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
@@ -22,7 +24,6 @@ const rounded = num => {
 const MapChart = ({ setTooltipContent }) => {
   return (
     <>
-      <h1>MAP</h1>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
         <ZoomableGroup>
           <Geographies geography={geoUrl}>
@@ -33,7 +34,7 @@ const MapChart = ({ setTooltipContent }) => {
                   geography={geo}
                   onMouseEnter={() => {
                     const { NAME, POP_EST } = geo.properties;
-                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
+                    setTooltipContent(<Trip NAME={NAME}/>);
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");
@@ -62,4 +63,4 @@ const MapChart = ({ setTooltipContent }) => {
   );
 };
 
-export default memo(MapChart);
+export default MapChart;
