@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -6,10 +6,12 @@ import {
   Geography
 } from "react-simple-maps";
 
-import Trip from './Trip.jsx'
+import Trip from './Trip.jsx';
+import store from '../store';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+
 
 const rounded = num => {
   if (num > 1000000000) {
@@ -22,6 +24,8 @@ const rounded = num => {
 };
 
 const MapChart = ({ setTooltipContent }) => {
+  let currentState = store.getState();
+console.log("currentState", currentState);
   return (
     <>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
@@ -34,7 +38,7 @@ const MapChart = ({ setTooltipContent }) => {
                   geography={geo}
                   onMouseEnter={() => {
                     const { NAME} = geo.properties;
-                    setTooltipContent(<Trip geo = {geo} NAME={NAME}/>);
+                    setTooltipContent(<Trip currentCity = {currentState.currentCity} geo = {geo} NAME={NAME}/>);
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");
