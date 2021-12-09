@@ -24,7 +24,6 @@ const ToDo = () => {
 
   const handleClick = (value) => {
 const todoSelect = document.querySelector('todo');
-todoSelect.options[0].value = countrySelectedInMap;
     const arr = allCountriesObj.filter((element) => {
       return element.name === value;
     });
@@ -46,7 +45,6 @@ todoSelect.options[0].value = countrySelectedInMap;
       <h1>Things to do in {`${country}`}</h1>
       <select
       id="todo"
-        value={currentCountryFromMap}
         onChange={(e) => handleClick(e.target.value)}
       >
         {allCountries}

@@ -4,12 +4,15 @@ import Dashboard from "../client/Components/Dashboard.jsx";
 import MapChart from "./Components/MapChart.jsx";
 import ToDo from "./Components/ToDo.jsx";
 import ReactTooltip from "react-tooltip";
+import Spinner from 'react-bootstrap/Spinner';
 import "./styles.css";
+
 const App = () => {
   const [content, setContent] = useState("");
 
   return (
     <div>
+  
       <MapChart setTooltipContent={setContent} />
       <ReactTooltip
         className="tool-tip"
@@ -19,6 +22,7 @@ const App = () => {
       >
         {content}
       </ReactTooltip>
+     
       <Dashboard />
       <ToDo />
     </div>

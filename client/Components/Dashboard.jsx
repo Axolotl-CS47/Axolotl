@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import countryCityObj from "../../seeds/countryCapital.js";
 import { findCityByCountry } from "../utility.js";
 import TableRow from "../Components/TableRow.jsx";
+import Spinner from 'react-bootstrap/Spinner'
 
 const Dashboard = () => {
   const [countryFrom, setCountryFrom] = useState("");
@@ -13,8 +14,11 @@ const Dashboard = () => {
   const [departureDate, setDepartureDate] = useState("2022-05-11");
   const [airportCodeArrival, setAirportCodeArrival] = useState("");
   const [returnDate, setReturnDate] = useState("2022-05-12");
+const [showSpinner, setShowSpinner] = useState(null)
+const [showTable, setShowTable] = useState(null);
 
   const handleFetch = () => {
+    setShowSpinner(true);
     fetch(
       `https://priceline-com-provider.p.rapidapi.com/v1/flights/search?location_departure=${airportCodeDeparture}&itinerary_type=ONE_WAY&sort_order=PRICE&class_type=ECO&date_departure=${departureDate}&location_arrival=${airportCodeArrival}&date_departure_return=${returnDate}&number_of_passengers=1&number_of_stops=1&price_min=100&price_max=20000&duration_max=2051`,
       {
@@ -27,7 +31,7 @@ const Dashboard = () => {
       }
     )
       .then((response) => response.json())
-      .then((data) => setFetchResult([...data.segment]))
+      .then((data) => setFetchResult([...data.segment])).then(() => setShowSpinner(false)).then(() => setShowTable(true))
       .catch((err) => {
         console.error(err);
       });
@@ -143,20 +147,14 @@ const Dashboard = () => {
           <option>CDG</option>
           <option>ORY</option>
         </select>
-
-        <table>
+{showSpinner && <Spinner animation="border" />}
+       <table>
           <tr>
             <td>Departure Date</td>
             <td>Arrival Time</td>
             <td>Destination Airport</td>
             <td>Flight Duration</td>
             <td>Flight Number</td>
-            <td>
-              <button className="tableRowButtons">Flight Details</button>
-            </td>
-            <td>
-              <button className="tableRowButtons">Location Details</button>
-            </td>
           </tr>
           {tableRowArray}
         </table>
