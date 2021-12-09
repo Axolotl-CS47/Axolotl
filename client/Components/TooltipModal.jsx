@@ -7,12 +7,10 @@ const Trip = (props) => {
   useEffect(() => {
     let val = findCountry(countryCityObj, props.NAME);
     setCity(val);
-    console.log("city", city);
   }, [props.NAME]);
 
   useEffect(() => {
   setCurr(props.currentCity);
-  console.log("props.currentCity", props.currentCity);
   }, [props.currentCity, curr]);
 
   const findCountry = (arr, val) => {
@@ -34,4 +32,4 @@ const Trip = (props) => {
   );
 };
 
-export default Trip;
+export default TootipModal;

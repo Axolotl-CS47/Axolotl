@@ -20,7 +20,6 @@ const Dashboard = () => {
   const [returnDate, setReturnDate] = useState("2022-05-12");
 
   useEffect(() => {
-    console.log("fetchResult", fetchResult);
   }, [fetchResult]);
 
   const handleFetch = () => {
