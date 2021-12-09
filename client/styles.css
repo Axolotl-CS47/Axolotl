@@ -56,7 +56,7 @@ font-size:xx-small;
 table {
   border: 2px solid black;
   width: 1200px;
-  min-height: 200px;
+  max-height: 200px;
   overflow-y: scroll;
   margin-left: 30px;
   margin-top: 30px;
