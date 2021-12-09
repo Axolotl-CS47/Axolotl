@@ -7,15 +7,8 @@ import {
   Geography,
 } from "react-simple-maps";
 
-<<<<<<< HEAD
-import Trip from './Trip.jsx';
-import Modal from './Modal.jsx'
-
-import store from '../store';
-=======
 import store from "../store";
 import TootipModal from "./TooltipModal.jsx";
->>>>>>> e63f88f6275b85252244243641477b12a9ed6d85
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -123,7 +116,6 @@ const MapChart = ({ setTooltipContent }) => {
             </Geographies>
           </ZoomableGroup>
         </ComposableMap>
->>>>>>> e63f88f6275b85252244243641477b12a9ed6d85
       </div>
     </>
   );

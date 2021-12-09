@@ -44,11 +44,6 @@ const Dashboard = () => {
     setCityTo(currentCity);
   }, [countryTo]);
 
-<<<<<<< HEAD
-  const cities = findCityByCountry(countryCityObj, country);
-  console.log(country, city, countryTo, cityTo);
-  // console.log(cities)
-=======
   const countryFromOptionList = [];
   countryCityObj.map((element) =>
     countryFromOptionList.push(<option>{element.country}</option>)
@@ -74,67 +69,11 @@ const Dashboard = () => {
   fetchResult.map((element) =>
     tableRowArray.push(<TableRow rowData={element} />)
   );
->>>>>>> d9475f875d1b6f333051bcd32ae17516f4cccc3e
 
   return (
     <>
       <div>
         <h3>Dashboard</h3>
-<<<<<<< HEAD
-        <Button variant="contained">Hello World</Button>; ReactDOM.render(
-        <App />, document.querySelector('#app'));
-        <button
-          onClick={() =>
-            store.dispatch({ type: 'SET_CURRENT_CITY', payload: 'Toronto' })
-          }
-        >
-          Click me !!
-        </button>
-        <hr></hr>
-        {/* <input className='dashDropdown' placeholder='FROM'></input>
-        <input className='dashDropdown' placeholder='TO'></input>
-        <button>Search</button> */}
-        <form>
-          <h4>From</h4>
-          <select
-            className="dashDropdown"
-            onChange={(e) => setCountryFrom(e.target.value)}
-          >
-            <option>Country</option>
-            {allCountries()}
-            {/* <option>{allCountries()}</option>
-            <option>LAX</option> */}
-          </select>
-          <select className="dashDropdown">
-            <option>City</option>
-            <option>{city}</option>
-
-            {/* <option>Select One</option>
-            <option>CDG</option> */}
-          </select>
-          <h4>Destination</h4>
-          <select
-            className="dashDropdown"
-            onChange={(e) => setCountryTo(e.target.value)}
-          >
-            <option>Country</option>
-            {allCountries()}
-            {/* <option>{allCountries()}</option>
-            <option>LAX</option> */}
-          </select>
-          <select className="dashDropdown">
-            <option>City</option>
-            <option>{cityTo}</option>
-            {/* <option>Select One</option>
-            <option>CDG</option> */}
-          </select>
-        </form>
-        <table>
-          <tr>
-            <td>current city</td>
-            <td>destination city</td>
-            <td>destination city</td>
-=======
         <h4>From</h4>
         <label>Country</label>
         <br />
@@ -213,7 +152,6 @@ const Dashboard = () => {
             <td>Destination Airport</td>
             <td>Flight Duration</td>
             <td>Flight Number</td>
->>>>>>> d9475f875d1b6f333051bcd32ae17516f4cccc3e
             <td>
               <button className="tableRowButtons">Flight Details</button>
             </td>
