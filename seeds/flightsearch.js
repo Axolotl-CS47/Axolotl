@@ -1,4 +1,4 @@
-{
+export const flightData = {
   "providerCoverage": "ALL",
   "itineraryType": "ONE_WAY",
   "cheapestFlightNonStop": false,
