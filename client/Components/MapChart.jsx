@@ -5,17 +5,20 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  // Graticule
 } from "react-simple-maps";
 
+<<<<<<< HEAD
 import Trip from './Trip.jsx';
 import Modal from './Modal.jsx'
 
 import store from '../store';
+=======
+import store from "../store";
+import TootipModal from "./TooltipModal.jsx";
+>>>>>>> e63f88f6275b85252244243641477b12a9ed6d85
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
-
 
 const MapChart = ({ setTooltipContent }) => {
   const [state, setState] = useState('');
@@ -23,6 +26,7 @@ const MapChart = ({ setTooltipContent }) => {
 
   return (
     <>
+<<<<<<< HEAD
     <div style={{height: "1000px", width: "1000px"}}>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
       {/* <Graticule stroke="#F53" />  */}
@@ -75,6 +79,51 @@ const MapChart = ({ setTooltipContent }) => {
           </Geographies>
         </ZoomableGroup>
       </ComposableMap>
+=======
+      <div style={{ height: "1000px", width: "1000px" }}>
+        <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
+          <ZoomableGroup>
+            <Geographies geography={geoUrl}>
+              {({ geographies }) =>
+                geographies.map((geo) => (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    onMouseEnter={() => {
+
+                      const { NAME, POP_EST, GDP_MD_EST, POP_RANK, GDP_YEAR, NAME_LONG } = geo.properties;
+                      setTooltipContent(
+                        <TootipModal
+                          currentCity={currentState.currentCity}
+                          details={geo.properties}
+                          NAME={NAME}
+                        />
+                      );
+                    }}
+                    onMouseLeave={() => {
+                      setTooltipContent("");
+                    }}
+                    style={{
+                      default: {
+                        fill: "#D6D6DA",
+                        outline: "none",
+                      },
+                      hover: {
+                        fill: "#F53",
+                        outline: "none",
+                      },
+                      pressed: {
+                        fill: "#E42",
+                        outline: "none",
+                      },
+                    }}
+                  />
+                ))
+              }
+            </Geographies>
+          </ZoomableGroup>
+        </ComposableMap>
+>>>>>>> e63f88f6275b85252244243641477b12a9ed6d85
       </div>
     </>
   );
