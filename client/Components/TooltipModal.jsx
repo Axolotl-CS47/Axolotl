@@ -17,21 +17,8 @@ const TootipModal = (props) => {
   // },[])
 
   useEffect(() => {
-<<<<<<< HEAD
-  setCurr(props.currentCity);
-<<<<<<< HEAD:client/Components/Trip.jsx
-  console.log("props.currentCity", props.geo);
-=======
->>>>>>> d9475f875d1b6f333051bcd32ae17516f4cccc3e:client/Components/TooltipModal.jsx
-=======
     setCurr(props.currentCity);
->>>>>>> e63f88f6275b85252244243641477b12a9ed6d85
   }, [props.currentCity, curr]);
-
-  useEffect(() => {
-   
-    console.log("props.currentCity", props.geo);
-    }, []);
 
   const findCountry = (arr, val) => {
     const res = arr.filter((element) => element.country === val);
@@ -39,12 +26,6 @@ const TootipModal = (props) => {
   };
   return (
     <>
-<<<<<<< HEAD
-      <div id="tt-element"></div>
-          { city } 
-          <br></br>
-          <a href={`https://www.wikipedia.com/?${city}`}>WikiLink</a>
-=======
 
       <table className="tool-tip">
         <tr>
@@ -65,7 +46,6 @@ const TootipModal = (props) => {
           <td>{props.details.POP_RANK}</td>
         </tr>
       </table>
->>>>>>> e63f88f6275b85252244243641477b12a9ed6d85
       <div />
     </>
   );

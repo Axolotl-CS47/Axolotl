@@ -1,80 +1,77 @@
 html {
-    font-family: system-ui, sans-serif;
-    font-size: 1.25rem;
-  }
-  
-  body {
-    margin: 0;
-  }
-  
-  svg {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  .App {
-    font-family: sans-serif;
-    text-align: center;
-  }
+  font-family: system-ui, sans-serif;
+  font-size: 1.25rem;
+}
+
+body {
+  margin: 0;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
 .tool-tip{
 text-align: center;
 font-size:xx-small;
-  width: 2em;
-  padding:0.5em;
-  margin:0.2em;
-  border:solid black 1px;
+width: 2em;
+padding:0.5em;
+margin:0.2em;
+border:solid black 1px;
 }
 .tool-tip td{
-  font-size: xx-small;
+font-size: xx-small;
 
-  text-align: center;
-  width: 3em;
-  padding:0.2em;
-  margin:0.3em;
-  border:solid black 1px;
+text-align: center;
+width: 3em;
+padding:0.2em;
+margin:0.3em;
+border:solid black 1px;
 }
 
-  /* #tt-element {
-    width: 20px;
-    height: 20px;
-    background: red;
-  } */
+/* #tt-element {
+  width: 20px;
+  height: 20px;
+  background: red;
+} */
 
 #tt-element a {
-    display: none;
-    padding-left: 30px;
+  display: none;
+  padding-left: 30px;
 }
 
 #tt-element:hover a {
-    display: block;
-<<<<<<< HEAD
-=======
-  }
+  display: block;
+}
 
 .dashDropdown {
-  width: 300px;
+width: 300px;
 }
 
 table {
-  border: 2px solid black;
-  width: 1200px;
-  min-height: 200px;
-  overflow-y: scroll;
-  margin-left: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+border: 2px solid black;
+width: 1200px;
+min-height: 200px;
+overflow-y: scroll;
+margin-left: 30px;
+margin-top: 30px;
+margin-bottom: 30px;
 }
 
 select {
-  border-radius: 15px;
-  color: white;
-  font-weight: bold;
-  background-color: rgb(109, 109, 109);
-  cursor: pointer;
+border-radius: 15px;
+color: white;
+font-weight: bold;
+background-color: rgb(109, 109, 109);
+cursor: pointer;
 }
 
 select:hover {
-  background-color: rgb(53, 53, 53);
-  /* transition: 0.3s; */
->>>>>>> d9475f875d1b6f333051bcd32ae17516f4cccc3e
+background-color: rgb(53, 53, 53);
+/* transition: 0.3s; */
 }
