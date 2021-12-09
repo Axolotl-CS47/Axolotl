@@ -4,6 +4,7 @@ import countryCityObj from '../../seeds/countryCapital.js'
 const Trip = (props) => {
   const [city, setCity] = useState("");
   const [curr, setCurr] = useState("");
+
   useEffect(() => {
     let val = findCountry(countryCityObj, props.NAME);
     setCity(val);
@@ -12,8 +13,13 @@ const Trip = (props) => {
 
   useEffect(() => {
   setCurr(props.currentCity);
-  console.log("props.currentCity", props.currentCity);
+  console.log("props.currentCity", props.geo);
   }, [props.currentCity, curr]);
+
+  useEffect(() => {
+   
+    console.log("props.currentCity", props.geo);
+    }, []);
 
   const findCountry = (arr, val) => {
     const res = arr.filter((element) => element.country === val);
@@ -26,7 +32,7 @@ const Trip = (props) => {
       <div id="tt-element"></div>
           { city } 
           <br></br>
-          <a href={`https://www.wikipedia.com/?${city}`}>{city}</a>
+          <a href={`https://www.wikipedia.com/?${city}`}>WikiLink</a>
       <div />
     </>
   );

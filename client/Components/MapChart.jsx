@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import ReactTooltip from 'react-tooltip';
 import {
   ZoomableGroup,
   ComposableMap,
@@ -8,6 +9,8 @@ import {
 } from "react-simple-maps";
 
 import Trip from './Trip.jsx';
+import Modal from './Modal.jsx'
+
 import store from '../store';
 
 const geoUrl =
@@ -15,6 +18,7 @@ const geoUrl =
 
 
 const MapChart = ({ setTooltipContent }) => {
+  const [state, setState] = useState('');
   let currentState = store.getState();
 
   return (
@@ -29,12 +33,21 @@ const MapChart = ({ setTooltipContent }) => {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  onClick={() => {
-                    const { NAME} = geo.properties;
-                    setTooltipContent(<Trip currentCity = {currentState.currentCity} geo = {geo} NAME={NAME}/>);
+                  onMouseEnter={() => {
+                    const { NAME } = geo.properties;
+                   // setTooltipContent(geo.properties);
+                    console.log("geo.properties", geo.properties)
+                    // setTooltipContent(<Trip currentCity = {currentState.currentCity} geo = {geo} NAME={NAME}/>);
+                  //   <ReactTooltip
+                  //   backgroundColor="#a1caf1"
+                  //   textColor="black"
+                  //   clickable={true}
+                  // >
+                  //   <Trip currentCity = {currentState.currentCity} geo = {geo} NAME={NAME}/>
+                  // </ReactTooltip>
                   }}
                   onMouseLeave={() => {
-                    setTooltipContent("");
+                  //  setTooltipContent("");
                   }}
                   style={{
                     default: {
