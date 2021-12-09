@@ -17,9 +17,11 @@ const Trip = (props) => {
 
   const findCountry = (arr, val) => {
     const res = arr.filter((element) => element.country === val);
-
     return res[0]?.city;
   };
+
+  // determine city from country passed in from mapChart (from props)
+  // const city = findCountry(countryCityObj, props.NAME);
 
   return (
     <>

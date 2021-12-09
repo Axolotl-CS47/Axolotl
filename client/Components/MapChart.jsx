@@ -19,7 +19,7 @@ const MapChart = ({ setTooltipContent }) => {
 
   return (
     <>
-    <div style={{height: "800px", width: "800px"}}>
+    <div style={{height: "1000px", width: "1000px"}}>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
       {/* <Graticule stroke="#F53" />  */}
         <ZoomableGroup>
