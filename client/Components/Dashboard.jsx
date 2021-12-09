@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import countryCityObj from "../../seeds/countryCapital.js";
-import { flightData } from "../../seeds/flightsearch.js";
 import { findCityByCountry } from "../utility.js";
 import TableRow from "../Components/TableRow.jsx";
 

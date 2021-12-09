@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Dashboard from "./Components/Dashboard.jsx";
 
+console.log("store",store.getState);
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

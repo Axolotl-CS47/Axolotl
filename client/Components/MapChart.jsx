@@ -13,7 +13,7 @@ const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
 const MapChart = ({ setTooltipContent }) => {
-  let currentState = store.getState();
+  let currentCity = store.getState();
 
   return (
     <>
@@ -26,12 +26,25 @@ const MapChart = ({ setTooltipContent }) => {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
+                    onClick={() => {
+   
+                      store.dispatch({
+                        type: "SET_COUNTRY_FROM_MAP",
+                        payload: {currentCountry: geo.properties.NAME_LONG},
+                      });
+                    }}
                     onMouseEnter={() => {
-
-                      const { NAME, POP_EST, GDP_MD_EST, POP_RANK, GDP_YEAR, NAME_LONG } = geo.properties;
+                      const {
+                        NAME,
+                        POP_EST,
+                        GDP_MD_EST,
+                        POP_RANK,
+                        GDP_YEAR,
+                        NAME_LONG,
+                      } = geo.properties;
                       setTooltipContent(
                         <TootipModal
-                          currentCity={currentState.currentCity}
+                          currentCity={currentCity.currentCity}
                           details={geo.properties}
                           NAME={NAME}
                         />
