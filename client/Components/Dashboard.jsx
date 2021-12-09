@@ -23,6 +23,7 @@ const Dashboard = () => {
     console.log('in line 23',flightData.airport);
   }
   
+  
   // console.log('finding data', findFlights(flightData, "Moscow"))
   
  
