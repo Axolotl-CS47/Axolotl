@@ -17,7 +17,7 @@ const MapChart = ({ setTooltipContent }) => {
 
   return (
     <>
-      <div style={{ height: "1000px", width: "1000px" }}>
+      <div style={{ className:"map"}}>
         <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
           <ZoomableGroup>
             <Geographies geography={geoUrl}>

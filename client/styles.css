@@ -40,6 +40,11 @@ border:solid black 1px;
   background: red;
 } */
 
+#map {
+  height: "800px";
+  width: "800px";
+}
+
 #tt-element a {
   display: none;
   padding-left: 30px;
