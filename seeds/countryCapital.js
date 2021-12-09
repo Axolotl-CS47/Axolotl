@@ -920,10 +920,6 @@ const countryCityObj = [
         "city": "Washington"
     },
     {
-        "country": "United States Minor Outlying Islands",
-        "city": "TEST"
-    },
-    {
         "country": "Uruguay",
         "city": "Montevideo"
     },

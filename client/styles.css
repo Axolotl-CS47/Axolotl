@@ -30,4 +30,34 @@ html {
 
 #tt-element:hover a {
     display: block;
+<<<<<<< HEAD
+=======
+  }
+
+.dashDropdown {
+  width: 300px;
+}
+
+table {
+  border: 2px solid black;
+  width: 1200px;
+  min-height: 200px;
+  overflow-y: scroll;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+select {
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(109, 109, 109);
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: rgb(53, 53, 53);
+  /* transition: 0.3s; */
+>>>>>>> d9475f875d1b6f333051bcd32ae17516f4cccc3e
 }

@@ -8,12 +8,14 @@ const Trip = (props) => {
   useEffect(() => {
     let val = findCountry(countryCityObj, props.NAME);
     setCity(val);
-    console.log("city", city);
   }, [props.NAME]);
 
   useEffect(() => {
   setCurr(props.currentCity);
+<<<<<<< HEAD:client/Components/Trip.jsx
   console.log("props.currentCity", props.geo);
+=======
+>>>>>>> d9475f875d1b6f333051bcd32ae17516f4cccc3e:client/Components/TooltipModal.jsx
   }, [props.currentCity, curr]);
 
   useEffect(() => {
@@ -23,9 +25,11 @@ const Trip = (props) => {
 
   const findCountry = (arr, val) => {
     const res = arr.filter((element) => element.country === val);
-
     return res[0]?.city;
   };
+
+  // determine city from country passed in from mapChart (from props)
+  // const city = findCountry(countryCityObj, props.NAME);
 
   return (
     <>
@@ -38,4 +42,4 @@ const Trip = (props) => {
   );
 };
 
-export default Trip;
+export default TootipModal;

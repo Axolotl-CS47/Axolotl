@@ -23,7 +23,7 @@ const MapChart = ({ setTooltipContent }) => {
 
   return (
     <>
-    <div style={{height: "800px", width: "800px"}}>
+    <div style={{height: "1000px", width: "1000px"}}>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
       {/* <Graticule stroke="#F53" />  */}
         <ZoomableGroup>
@@ -33,6 +33,7 @@ const MapChart = ({ setTooltipContent }) => {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
+<<<<<<< HEAD
                   onMouseEnter={() => {
                     const { NAME } = geo.properties;
                    // setTooltipContent(geo.properties);
@@ -45,6 +46,11 @@ const MapChart = ({ setTooltipContent }) => {
                   // >
                   //   <Trip currentCity = {currentState.currentCity} geo = {geo} NAME={NAME}/>
                   // </ReactTooltip>
+=======
+                  onClick={() => {
+                    const { NAME} = geo.properties;
+                    setTooltipContent(<Trip currentCity = {currentState.currentCity} geo = {geo} NAME={NAME}/>);
+>>>>>>> d9475f875d1b6f333051bcd32ae17516f4cccc3e
                   }}
                   onMouseLeave={() => {
                   //  setTooltipContent("");

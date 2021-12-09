@@ -12,6 +12,7 @@ module.exports = {
     filename: "bundle.js",
   },
   plugins: [new HtmlWebpackPlugin({ template: "index.html" })],
+  mode: "development",
   module: {
     rules: [
       {
