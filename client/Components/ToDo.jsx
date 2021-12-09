@@ -12,9 +12,20 @@ const ToDo = () => {
     <option>{obj.name}</option>
   )
 
+
+
+
+
+
   const allTheCities = cities.map(element => {
     return <option>{element}</option>
   })
+
+
+
+
+
+
 
   const handleClick = (value) => {
     const arr = allCountriesObj.filter((element) => {
@@ -24,7 +35,6 @@ const ToDo = () => {
     const code = arr[0].isoCode;
     const allCitiesObj = City.getAllCities();
     const allCities = allCitiesObj.filter(obj => {
-    // console.log('Country Code',countryCode,'Object.country.code',obj.countryCode)
     return obj.countryCode === code;
     }).map(element => {
       return element.name;

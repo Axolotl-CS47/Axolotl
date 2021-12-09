@@ -16,6 +16,23 @@ html {
     font-family: sans-serif;
     text-align: center;
   }
+.tool-tip{
+text-align: center;
+font-size:xx-small;
+  width: 2em;
+  padding:0.5em;
+  margin:0.2em;
+  border:solid black 1px;
+}
+.tool-tip td{
+  font-size: xx-small;
+
+  text-align: center;
+  width: 3em;
+  padding:0.2em;
+  margin:0.3em;
+  border:solid black 1px;
+}
 
   /* #tt-element {
     width: 20px;
