@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import ReactDOM from "react-dom"
 import Dashboard from '../client/Components/Dashboard.jsx';
 import MapChart from './Components/MapChart.jsx';
+import ToDo from './Components/ToDo.jsx';
 import ReactTooltip from "react-tooltip";
 import style from "./styles.css";
 const geoUrl =
@@ -15,6 +16,7 @@ const App = () => {
       <MapChart setTooltipContent={setContent} />
       <ReactTooltip backgroundColor="white" textColor="black" clickable>{content}</ReactTooltip>
       <Dashboard />
+      <ToDo />
 
     </div>
   )

@@ -19,9 +19,7 @@ const Dashboard = () => {
   const [airportCodeArrival, setAirportCodeArrival] = useState("NYC");
   const [returnDate, setReturnDate] = useState("2022-05-12");
 
-  useEffect(() => {
-  }, [fetchResult]);
-
+ 
   const handleFetch = () => {
     fetch(
       `https://priceline-com-provider.p.rapidapi.com/v1/flights/search?location_departure=${airportCodeDeparture}&itinerary_type=ONE_WAY&sort_order=PRICE&class_type=ECO&date_departure=${departureDate}&location_arrival=${airportCodeArrival}&date_departure_return=${returnDate}&number_of_passengers=1&number_of_stops=1&price_min=100&price_max=20000&duration_max=2051`,
