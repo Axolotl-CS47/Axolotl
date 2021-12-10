@@ -9,13 +9,6 @@ const TootipModal = (props) => {
     let val = findCountry(countryCityObj, props.NAME);
     setCity(val);
   }, [props.NAME]);
-
-  // useEffect(() => {
-  //   fetch(`https://api.opentripmap.com/0.1/en/places/bbox?place=${city}&lon_min=38.364285&lon_max=38.372809&lat_min=59.855685&lat_max=59.859052&src_geom=wikidata&apikey=5ae2e3f221c38a28845f05b6b058d6bf349468b84a740b3cd7042a5f`)
-  //   .then(response => response.json())
-  //   .then(data => setFetchResult([...data.features])).then((data) => console.log(data));
-  // },[])
-
   useEffect(() => {
     setCurr(props.currentCity);
   }, [props.currentCity, curr]);
@@ -26,7 +19,7 @@ const TootipModal = (props) => {
   };
   return (
     <>
-
+<span>
       <table className="tool-tip">
         <tr>
           <td>Country</td>
@@ -46,7 +39,8 @@ const TootipModal = (props) => {
           <td>{props.details.POP_RANK}</td>
         </tr>
       </table>
-      <div />
+      </span>
+
     </>
   );
 };

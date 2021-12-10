@@ -4,7 +4,6 @@ import Dashboard from "../client/Components/Dashboard.jsx";
 import MapChart from "./Components/MapChart.jsx";
 import ToDo from "./Components/ToDo.jsx";
 import ReactTooltip from "react-tooltip";
-import Spinner from 'react-bootstrap/Spinner';
 import "./styles.css";
 
 const App = () => {
@@ -12,8 +11,10 @@ const App = () => {
 
   return (
     <div>
-  
+      <hr></hr>
+      <div style={{background: '#6464DC'}}>
       <MapChart setTooltipContent={setContent} />
+      </div>
       <ReactTooltip
         className="tool-tip"
         backgroundColor="white"

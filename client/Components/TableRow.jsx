@@ -1,6 +1,5 @@
 import React from 'react';
 const TableRow = (props) => {
-  console.log("props", props);
 return (
   <tr>
   <td>{props.rowData.departDateTime}</td>
