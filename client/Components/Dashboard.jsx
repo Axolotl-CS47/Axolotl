@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import countryCityObj from "../../seeds/countryCapital.js";
-import { flightData } from "../../seeds/flightsearch.js";
 import { findCityByCountry } from "../utility.js";
 import TableRow from "../Components/TableRow.jsx";
 
@@ -13,7 +12,7 @@ const Dashboard = () => {
   const [airportCodeDeparture, setAirportCodeDeparture] = useState("");
   const [departureDate, setDepartureDate] = useState("2022-05-11");
   const [airportCodeArrival, setAirportCodeArrival] = useState("");
-  const [returnDate, setReturnDate] = useState("2022-05-12");
+  const [returnDate, setReturnDate] = useState("2022-11-11");
 
   const handleFetch = () => {
     fetch(
@@ -45,76 +44,56 @@ const Dashboard = () => {
   }, [countryTo]);
 
   const countryFromOptionList = [];
-  countryCityObj.map((element) =>
-    countryFromOptionList.push(<option>{element.country}</option>)
+  countryCityObj.map((element, index) =>
+    countryFromOptionList.push(
+      <option key={`element${index}`}>{element.country}</option>
+    )
   );
 
   const cityFromOptionList = [];
   countryCityObj
     .filter((element) => !!element.city)
     .filter((element) => element.country === countryFrom)
-    .map((element) => cityFromOptionList.push(<option>{element.city}</option>));
+    .map((element, index) =>
+      cityFromOptionList.push(
+        <option key={`element${index}`}>{element.city}</option>
+      )
+    );
 
   const countryToOptionList = [];
-  countryCityObj.map((element) =>
-    countryToOptionList.push(<option>{element.country}</option>)
+  countryCityObj.map((element, index) =>
+    countryToOptionList.push(
+      <option key={`element${index}`}>{element.country}</option>
+    )
   );
 
   const cityToOptionList = [];
   countryCityObj
     .filter((element) => element.country === countryTo)
-    .map((element) => cityToOptionList.push(<option>{element.city}</option>));
+    .map((element, index) =>
+      cityToOptionList.push(
+        <option key={`element${index}`}>{element.city}</option>
+      )
+    );
 
   const tableRowArray = [];
-  fetchResult.map((element) =>
-    tableRowArray.push(<TableRow rowData={element} />)
+  fetchResult.map((element, index) =>
+    tableRowArray.push(<TableRow className="table-rows" key={`element${index}`} rowData={element} />)
   );
 
   return (
     <>
       <div>
-        <h3>Dashboard</h3>
-        <h4>From</h4>
-        <label>Country</label>
-        <br />
-        <button onClick={() => handleFetch()}>Search</button>
-        <select
-          className="dashDropdown"
-          onChange={(e) => setCountryFrom(e.target.value)}
-        >
-          <option>--Select--</option>
-          {countryFromOptionList}
-        </select>
-        <label>City</label>
-        <select className="dashDropdown">
-          <option>--Select--</option>
-          {cityFromOptionList}
-        </select>
-        <h4>Destination</h4>
-        <select
-          className="dashDropdown"
-          onChange={(e) => setCountryTo(e.target.value)}
-        >
-          <option>--Select--</option>
-          {countryToOptionList}
-        </select>
-        <select
-          className="dashDropdown"
-          onChange={(e) => setCityTo(e.target.value)}
-        >
-          <option>--Select--</option>--
-          {cityToOptionList}
-        </select>
-        <hr />
+        <h1>Look Up Flights</h1>
 
-        <label>Departure Date</label>
+        <hr />
         <input
           value={departureDate}
           onChange={(e) => setDepartureDate(e.target.value)}
-          type="text"
+          type="date"
+          className="inputDate"
         />
 
-        <label>Departure Location Code</label>
         <select
           className="dashDropdown"
           onChange={(e) => setAirportCodeDeparture(e.target.value)}
@@ -129,12 +108,11 @@ const Dashboard = () => {
           <option>CDG</option>
           <option>ORY</option>
         </select>
-
-        <label>Arrival Airport Code</label>
         <select
           className="dashDropdown"
           onChange={(e) => setAirportCodeArrival(e.target.value)}
         >
+          <option>--Airport Arrival Code --</option>
           <option>SVO</option>
           <option>JFK</option>
           <option>DME</option>
@@ -144,23 +122,53 @@ const Dashboard = () => {
           <option>CDG</option>
           <option>ORY</option>
         </select>
+        <button onClick={() => handleFetch()}>Search</button>
+        <div
+          style={{
+            display: "block",
+            // overflowY: "scroll",
+            backgroundColor:'transparent',
+            marginLeft: "2em",
+        
+            width: "auto",
+            background: "white",
+          }}
+        >
+          <table
+            style={{
+              display: "block",
+              overflowY: "scroll",
+              block: "overflow-x:auto;",
+              backgroundColor:'transparent',
+              border: "1px solid black",
+              margin: "auto",
+              padding: "1em",
+              width: "auto",
+              background: "white",
+              marginRight:'0.1em'
+            }}
+          >
+            <tr style={{ marinLeft:'2em', border: "1px solid black", width: "auto" ,marginRight:'0.1em'}}>
+              <td style={{ border: "1px solid black", width: "auto"}}>
+                Departure Date
+              </td>
+              <td style={{ border: "1px solid black", width: "auto" }}>
+                Arrival Time
+              </td>
+              <td style={{ border: "1px solid black", width: "auto" }}>
+                Destination Airport
+              </td>
+              <td style={{ border: "1px solid black", width: "auto" }}>
+                Flight Duration
+              </td>
+              <td style={{ border: "1px solid black", width: "auto" }}>
+                Flight Number
+              </td>
+            </tr>
 
-        <table>
-          <tr>
-            <td>Departure Date</td>
-            <td>Arrival Time</td>
-            <td>Destination Airport</td>
-            <td>Flight Duration</td>
-            <td>Flight Number</td>
-            <td>
-              <button className="tableRowButtons">Flight Details</button>
-            </td>
-            <td>
-              <button className="tableRowButtons">Location Details</button>
-            </td>
-          </tr>
-          {tableRowArray}
-        </table>
+            {tableRowArray}
+          </table>
+        </div>
       </div>
     </>
   );

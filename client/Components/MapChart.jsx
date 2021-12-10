@@ -5,7 +5,7 @@ import {
   Geographies,
   Geography,
 } from "react-simple-maps";
-
+import countryCityObj from "../../seeds/countryCapital";
 import store from "../store";
 import TootipModal from "./TooltipModal.jsx";
 
@@ -13,12 +13,12 @@ const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
 const MapChart = ({ setTooltipContent }) => {
-  let currentState = store.getState();
+  let currentCity = store.getState();
 
   return (
     <>
-      <div style={{ height: "1000px", width: "1000px" }}>
-        <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
+      <div className="map" >
+        <ComposableMap data-tip="" projectionConfig={{ scale: 100 }}>
           <ZoomableGroup>
             <Geographies geography={geoUrl}>
               {({ geographies }) =>
@@ -26,12 +26,25 @@ const MapChart = ({ setTooltipContent }) => {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
+                    onClick={() => {
+                      let filteredCity = countryCityObj.filter(
+                        (element) => element.country === geo.properties.NAME_LONG
+                      );
+                      store.dispatch({
+                        type: "SET_COUNTRY_FROM_MAP",
+                        payload: {
+                          currentCity: filteredCity[0].city,
+                          currentCountry: geo.properties.NAME_LONG,
+                        },
+                      });
+                    }}
                     onMouseEnter={() => {
-
-                      const { NAME, POP_EST, GDP_MD_EST, POP_RANK, GDP_YEAR, NAME_LONG } = geo.properties;
+                      const {
+                        NAME
+                      } = geo.properties;
                       setTooltipContent(
                         <TootipModal
-                          currentCity={currentState.currentCity}
+                          currentCity={currentCity.currentCity}
                           details={geo.properties}
                           NAME={NAME}
                         />
@@ -50,7 +63,7 @@ const MapChart = ({ setTooltipContent }) => {
                         outline: "none",
                       },
                       pressed: {
-                        fill: "#E42",
+                        fill: "#9e4242",
                         outline: "none",
                       },
                     }}
