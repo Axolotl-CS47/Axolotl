@@ -1,55 +1,42 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
-  mode: process.env.NODE_ENV,
-  entry: path.join(__dirname, "./client/index.js"),
-  output: {
-    path: path.resolve(__dirname, "build"),
+  devServer: {
+    compress: true,
+    proxy: { "/api": "http://localhost:3000" },
   },
+  entry: path.resolve(__dirname, "./client/index.js"),
+  output: {
+    path: path.resolve(__dirname, "./build"),
+    filename: "bundle.js",
+  },
+  plugins: [new HtmlWebpackPlugin({ template: "index.html" })],
+  mode: "development",
   module: {
     rules: [
       {
-        test: /\.?js$/,
-        exclude: /node_modules/,
+        test: /\.jsx?/,
+        exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
       },
       {
-        test: /\.css$/,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          //Compiles Sass to CSS
-          "sass-loader",
-        ]
-      }
-    ]
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: ["file-loader"],
+      },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+      },
+      {
+        test: /\.s?[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "./client/index.html"),
-    }),
-  ],
-  devServer: {
-    static: {
-      publicPath: '/public',
-    },
-    host: 'localhost',
-    port: 8080,
-    proxy: {
-      '/api/**': 'http://localhost:3000',
-    },
-  },
-  resolve: {
-    //Enable importing js or jsx without specifying type
-    extensions: ['.js', '.jsx'],
-  },
-
-}
+};
