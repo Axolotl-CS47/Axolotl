@@ -78,7 +78,7 @@ const Dashboard = () => {
 
   const tableRowArray = [];
   fetchResult.map((element, index) =>
-    tableRowArray.push(<TableRow key={`element${index}`} rowData={element} />)
+    tableRowArray.push(<TableRow className="table-rows" key={`element${index}`} rowData={element} />)
   );
 
   return (
@@ -123,41 +123,51 @@ const Dashboard = () => {
           <option>ORY</option>
         </select>
         <button onClick={() => handleFetch()}>Search</button>
-        <div style={{ block: "overflow-x:auto;" }}>
+        <div
+          style={{
+            display: "block",
+            // overflowY: "scroll",
+            backgroundColor:'transparent',
+            marginLeft: "2em",
         
-            <table
-              style={{
-                height: '400px',
-                msOverflowStyle: 'scroll',
-                border: "1px solid black",
-                margin: "auto",
-                padding: "1em",
-                width: "10em",
-                background: "white",
-              }}
-            >
-              
-              <tr style={{ border: "1px solid black", width: "30em" }}>
-                <td style={{ border: "1px solid black", width: "3em" }}>
-                  Departure Date
-                </td>
-                <td style={{ border: "1px solid black", width: "3em" }}>
-                  Arrival Time
-                </td>
-                <td style={{ border: "1px solid black", width: "3em" }}>
-                  Destination Airport
-                </td>
-                <td style={{ border: "1px solid black", width: "3em" }}>
-                  Flight Duration
-                </td>
-                <td style={{ border: "1px solid black", width: "3em" }}>
-                  Flight Number
-                </td>
-              </tr>
+            width: "auto",
+            background: "white",
+          }}
+        >
+          <table
+            style={{
+              display: "block",
+              overflowY: "scroll",
+              block: "overflow-x:auto;",
+              backgroundColor:'transparent',
+              border: "1px solid black",
+              margin: "auto",
+              padding: "1em",
+              width: "auto",
+              background: "white",
+              marginRight:'0.1em'
+            }}
+          >
+            <tr style={{ marinLeft:'2em', border: "1px solid black", width: "auto" ,marginRight:'0.1em'}}>
+              <td style={{ border: "1px solid black", width: "auto"}}>
+                Departure Date
+              </td>
+              <td style={{ border: "1px solid black", width: "auto" }}>
+                Arrival Time
+              </td>
+              <td style={{ border: "1px solid black", width: "auto" }}>
+                Destination Airport
+              </td>
+              <td style={{ border: "1px solid black", width: "auto" }}>
+                Flight Duration
+              </td>
+              <td style={{ border: "1px solid black", width: "auto" }}>
+                Flight Number
+              </td>
+            </tr>
 
-              {tableRowArray}
-            </table>
-          
+            {tableRowArray}
+          </table>
         </div>
       </div>
     </>

@@ -120,7 +120,7 @@ const ToDo = () => {
         <option>Country</option>
         {allCountries}
       </select>
-      <select onChange={(e) => setCitySelected(e.target.value)}>
+      <select id='todo' onChange={(e) => setCitySelected(e.target.value)}>
         <option>City</option>
         {allTheCities}
         <br />

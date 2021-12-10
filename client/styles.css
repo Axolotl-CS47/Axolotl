@@ -83,7 +83,7 @@ tr{
 .travelInfo {
   display: block;
   border: 2px solid black;
-  width: 1200px;
+  width: 600px;
   height: 300px;
   overflow-y: scroll;
   margin: auto;
@@ -126,7 +126,6 @@ table .travelInfo {
 }
 
 .table-rows {
-  margin: auto;
 }
 
 input {
