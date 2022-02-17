@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Country, City } from "country-state-city";
 import store from "../store";
+
 const ToDo = () => {
-  const [arrayTestState, setArrayTestState] = useState([]);
+  const [, setArrayTestState] = useState([]);
   const [cities, setCities] = useState([]);
   const [citySelected, setCitySelected] = useState("");
   const [dataFetch, setDataFetch] = useState("");
@@ -20,9 +21,7 @@ const ToDo = () => {
   useEffect(() => {
     fetch(
       `https://api.opentripmap.com/0.1/en/places/geoname?name=${citySelectedInMap}&apikey=5ae2e3f221c38a28845f05b63e95fc09f0bc72578a5aa05f060e818b`
-    )
-      .then((res) => res.json())
-      .then((data) => {
+    ).then((res) => res.json()).then((data) => {
         const lon = data.lon;
         const lat = data.lat;
         fetch(
@@ -73,7 +72,6 @@ const ToDo = () => {
           )
             .then((res) => res.json())
             .then((dataXXID) => {
-              console.log("dataXXID", dataXXID);
               arrayTest.push(dataXXID);
             });
         }
@@ -120,10 +118,9 @@ const ToDo = () => {
         <option>Country</option>
         {allCountries}
       </select>
-      <select id='todo' onChange={(e) => setCitySelected(e.target.value)}>
+      <select name="select-city" id='todo' onChange={(e) => setCitySelected(e.target.value)}>
         <option>City</option>
         {allTheCities}
-        <br />
       </select>
       <table className='travelInfo'>{dataFetch && arrDisplay}</table>
     </>

@@ -1,55 +1,42 @@
-# Stab Rabbit Trip Planner
+# Welcome to Stab Rabbit Trip Planner
 
-Original Plan
+Stab Rabbit Trip Planner is a lightweight, React based trip planner and destination API aggregator. There is no app to map and track places that you have visited or plan to visit with information about the location (wikipedia, attractions, etc.). Stab Rabbit Trip Planner brings together a map view with a dashboard for trip history and planning utilities for exploration
 
-1. What is the problem you’re solving?
-(Frame this as if you’re writing it on your resume)
+<p align="center"><img src="./public/map-readme.png" style="margin-top: 10px; margin-bottom: -10px;"></p>
+<br />
+<p align="center"><img src="./public/flights-readme.png" style="margin-top: 10px; margin-bottom: -10px;"></p>
+<br />
+<p align="center"><img src="./public/todo-readme.png" style="margin-top: 10px; margin-bottom: -10px;"></p>
 
-There is not a good app to map and track places that you have visited or plan to visit with information about the location (wikipedia, attractions, etc.) that combines future travel search integrally
-
-2. What is the solution?
-
-An app that brings together a map view with a dashboard for trip history and planning for exploration (A better Google Travel App that displays meaningful data about destinations, not just prices)
-
-3. What is the project you’re iterating on?
-
-Axolotl Geo Tracking App
-
-4. What is the MVP scope? (core features you’ll be adding to the scratch project you pick up)
-
-APIs (RapidAPI)
-* Flight Data (data tested)
-* topo-geo.json maps -110m
-* Simple React Maps with Tooltips https://www.react-simple-maps.io/examples/map-chart-with-tooltip/
-
-
-Dashboard
+### Features
 * Filter for travel destinations
 * Filter for flight lists with costs
 * Highlight popular destinations for country highlighted
 * View information about destinations
+* Interactive Map
+* Tool-tip hover over countries to view details
 
-Map
-* Future planned locations (2-levels: booked, wishlist)
-* Tool-tip hover over destination shows details (tourist attractions, etc.)
+### Built With
 
-5. What are the tough technical challenges involved with solving this problem?
-* Conditionally rendering our components based on events from charts.js API
+- React
+- Redux
+- React Router
+- Chart.js
+- Material UI
+- React Testing Library
+- Jest
 
-6. What are the stretch goals?
-* OpenTripMap (data tested)
-* Tracking your photos from travel
-* COVID-19 Restrictions (data tested)
-* Identified COVID-19 high-risk areas
-* Past visited locations
+### Authors
 
-7. What is the technology stack?
-
-React/React Hooks/Redux Toolkit/Redux Hooks
-
-8. Team Responsibility breakdown: Who’s working on which part?
-
-All frontend focused (no backend, all API calls with local state management via Redux)
+- **Abeer Faizan** - [@abeer-f](https://github.com/abeer-f)
+- **Jay Wall** - [hanswand](https://github.com/hanswand)
+- **Stephen Kim** - [@stephenkim612](https://github.com/stephenkim612)
+- **Leonard Lew** - [@leolew97](https://github.com/leolew97)
+- **Victor Wang** - [@wangvwr](https://github.com/people/wangvwr)
 
 
 
+
+#### License
+
+This project is licensed under the MIT License
