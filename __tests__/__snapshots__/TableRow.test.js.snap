@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TableRow 1`] = `
+<tr>
+  <td />
+  <td />
+  <td />
+  <td />
+  <td />
+</tr>
+`;

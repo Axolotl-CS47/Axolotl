@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import countryCityObj from "../../seeds/countryCapital.js";
 import { findCityByCountry } from "../utility.js";
-import TableRow from "../Components/TableRow.jsx";
+import TableRow from "../components/TableRow.jsx";
 
 const Dashboard = () => {
-  const [countryFrom, setCountryFrom] = useState("");
-  const [cityFrom, setCityFrom] = useState("");
-  const [countryTo, setCountryTo] = useState("");
-  const [cityTo, setCityTo] = useState("");
+  const [countryFrom,] = useState("");
+  const [, setCityFrom] = useState("");
+  const [countryTo,] = useState("");
+  const [, setCityTo] = useState("");
   const [fetchResult, setFetchResult] = useState([]);
   const [airportCodeDeparture, setAirportCodeDeparture] = useState("");
   const [departureDate, setDepartureDate] = useState("2022-05-11");
   const [airportCodeArrival, setAirportCodeArrival] = useState("");
-  const [returnDate, setReturnDate] = useState("2022-11-11");
+  const [returnDate,] = useState("2022-11-11");
 
   const handleFetch = () => {
     fetch(
@@ -85,7 +85,6 @@ const Dashboard = () => {
     <>
       <div>
         <h1>Look Up Flights</h1>
-
         <hr />
         <input
           value={departureDate}
@@ -93,7 +92,6 @@ const Dashboard = () => {
           type="date"
           className="inputDate"
         />
-
         <select
           className="dashDropdown"
           onChange={(e) => setAirportCodeDeparture(e.target.value)}
@@ -126,10 +124,8 @@ const Dashboard = () => {
         <div
           style={{
             display: "block",
-            // overflowY: "scroll",
             backgroundColor:'transparent',
             marginLeft: "2em",
-        
             width: "auto",
             background: "white",
           }}
@@ -165,7 +161,6 @@ const Dashboard = () => {
                 Flight Number
               </td>
             </tr>
-
             {tableRowArray}
           </table>
         </div>
