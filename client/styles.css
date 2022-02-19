@@ -1,3 +1,143 @@
+* {
+  background-color: "#90EE90";
+  
+  text-align: center;
+}
+html {
+  font-family: system-ui, sans-serif;
+  font-size: 1.25rem;
+}
+
 body {
-    background: #F8F0E3;
+  margin: 0;
+  background-image: linear-gradient(to left top, #ffffff, #dfe0eb, #bcc3d7, #96a8c4, #6b8fb0);
+  margin-bottom: 200px;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.tool-tip {
+  background-color: transparent;
+  font-weight: bold;
+  text-decoration-color:silver;
+  text-align: center;
+  font-size: medium;
+  width: 2em;
+  padding: 0.5em;
+  margin: 0.2em;
+  padding-left: 0.1em;
+  margin-left: 0.1em;
+  border: solid black 1px;
+}
+.tool-tip td {
+  font-size: xx-small;
+
+  text-align: center;
+  width: 3em;
+  padding: 0.2em;
+  margin: 0.3em;
+  border: solid black 1px;
+}
+
+td.tool-tip {
+  font-size: xx-small;
+  text-align: center;
+  width: 3em;
+  padding: 0.2em;
+  margin: 0.3em;
+  border: solid black 1px;
+}
+
+#tt-element a {
+  display: none;
+  padding-left: 30px;
+}
+
+.map {
+  height: "1000px";
+  width: "1000px";
+  margin: "0em";
+  padding: "0em";
+}
+
+#tt-element:hover a {
+  display: block;
+}
+
+.dashDropdown {
+  width: 300px;
+}
+
+tr{
+  margin:auto;
+}
+
+.travelInfo {
+  display: block;
+  border: 2px solid black;
+  width: 600px;
+  height: 300px;
+  overflow-y: scroll;
+  margin: auto;
+}
+
+select {
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(109, 109, 109);
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: rgb(53, 53, 53);
+
+}
+
+
+button:hover {
+  color: rgb(120, 120, 120);
+  border-color: currentColor;
+  background-color: white;
+}
+
+button {
+  margin-left: 30px;
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(120, 120, 120);
+  width: 100px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+table .travelInfo {
+  margin: auto;
+  background: red;
+  overflow-y:scroll;
+}
+
+.table-rows {
+}
+
+input {
+  border-radius: 15px;
+  height: 28px;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(109, 109, 109);
+  cursor: pointer;
+}
+
+h1 {
+  font-family: 'Consolas', 'monaco', 'monospace';
+  margin-top: 100px;
 }
